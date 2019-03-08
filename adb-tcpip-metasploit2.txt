@@ -1,0 +1,59 @@
+https://www.rapid7.com/db/modules/exploit/android/adb/adb_server_exec
+Android ADB Debug Server Remote Payload Execution
+
+Writes and spawns a native payload on an android device that is listening for adb debug messages.
+Free Metasploit Download
+
+Get your copy of the world's leading penetration testing tool
+ 
+Download Now
+Module Name
+
+exploit/android/adb/adb_server_exec
+Authors
+
+    joev <joev [at] metasploit.com>
+
+Targets
+
+    armle
+    x86
+    x64
+    mipsle
+
+Platforms
+
+    linux
+
+Architectures
+
+    armle
+    x86
+    x64
+    mipsle
+    armle
+    x86
+    x64
+    mipsle
+
+Reliability
+
+    Excellent
+
+Development
+
+    Source Code
+    History
+
+Module Options
+
+To display the available options, load the module within the Metasploit console and run the commands 'show options' or 'show advanced':
+
+      msf > use exploit/android/adb/adb_server_exec
+      msf exploit(adb_server_exec) > show targets
+            ...targets...
+      msf exploit(adb_server_exec) > set TARGET <target-id>
+      msf exploit(adb_server_exec) > show options
+            ...show and set options...
+      msf exploit(adb_server_exec) > exploit
+    
