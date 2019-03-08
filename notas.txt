@@ -1,0 +1,78 @@
+https://itunes.apple.com/co/podcast/mundo-hacker-radio/id331456613?mt=2
+
+http://ar-g.github.io/ADB-Shell-Part-1/
+https://www.growingwiththeweb.com/2014/01/handy-adb-commands-for-android.html
+
+
+adb shell am start -a android.intent.action.VIEW -d http://www.growingwiththeweb.com
+
+power boton
+adb shell input keyevent 26
+unlock  screen
+adb shell input keyevent 82
+imprime los packages instalados
+adb shell pm list packages -f
+clear aplication data
+adb shell pm clear com.growingwiththeweb.example
+
+adb logcat
+
+adb shell monkey -p com.android.settings -c android.intent.category.LAUNCHER 1
+
+Replace com.android.settings with the package name of the app you would like to launch
+
+adb shell pm uninstall com.example.MyApp
+list users 
+adb shell screencap /sdcard/screen.png
+screencap /sdcard/screen.png
+adb pull /sdcard/screen.png
+adb shell screenrecord /sdcard/demo.mp4
+adb shell ls /system/bin
+
+dumpsys 
+adb shell dumpsys activity services our.package.name.OurService
+adb shell dumpsys -l
+
+adb shell dumpsys activity -h
+adb shell dumpsys meminfo com.viber.voip
+
+meminfo dump options
+adb shell dumpsys battery -h
+
+adb shell am start -n "our.application.id/our.package.name.OurActivity"
+adb shell am startservice -n "ar_g.blog.am/ar_g.blog.am.OurService" -e action kill  
+adb shell am broadcast -a "our.specified.action"
+
+adb shell getprop
+adb shell "svc wifi disable"
+
+
+
+dumpstate
+logcat 
+start 
+stop
+
+adb shell pm uninstall com.example.MyApp
+
+--activity-single-top
+--activity-task-on-home
+--activity-clear-task
+--activity-previous-is-top
+--activity-multiple-task
+
+adb shell am start -a android.intent.action.VIEW \
+   -c android.intent.category.BROWSABLE \
+   -d https://twitter.com/roman_mazur/status/672758680669036545
+
+adb shell startservice -n your.pckg.name/.YourPlaybackService \
+ -a your.pckg.name.action.START 
+
+adb shell settings put global sysui_demo_allowed 1
+activar algo para lo sig
+adb shell am broadcast -a com.android.systemui.demo -e action enter
+adb shell am broadcast -a com.android.systemui.demo \
+   -e action notifications -e visible false
+		salir de modo demo
+adb shell am broadcast -a com.android.systemui.demo -e action exit
+
